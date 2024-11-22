@@ -18,6 +18,7 @@ def driver():
 def users_methods():
     return UsersMethods()
 
+
 @pytest.fixture()
 def user_data(users_methods):
     payload = create_user_payload()
