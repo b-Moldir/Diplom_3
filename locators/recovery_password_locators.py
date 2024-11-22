@@ -9,5 +9,5 @@ class RecoveryPasswordLocators:
     LOGIN_EMAIL = (By.XPATH, '//label[text()="Email"]/parent::div/input')
     BUTTON_RESTORE = (By.XPATH, '//button[text()="Восстановить"]')
     ICON_LOCATOR = (By.CSS_SELECTOR, '.input__icon > svg:nth-child(1) > path')
-    FIELD_PASSWORD_LOCATOR = (By.XPATH, '//div[contains(@class, "input_type_password") and contains(@class, "input_status_active")]/input')
-    LABEL_PASSWORD_LOCATOR = (By.XPATH, '//label[contains(@class, "input__placeholder") and contains(@class, "input__placeholder-focused")]')
+    FIELD_PASSWORD_LOCATOR = (By.XPATH, '//*[@id="root"]/div/main/div/form/fieldset[1]/div/div')
+    LABEL_PASSWORD_LOCATOR = (By.XPATH, '//*[@id="root"]/div/main/div/form/fieldset[1]/div/div/label')

@@ -1,13 +1,15 @@
 import allure
+from selenium.webdriver.support.wait import WebDriverWait
+
 from page.base_page import BasePage
 from locators.recovery_password_locators import RecoveryPasswordLocators
+from selenium.webdriver.support import expected_conditions as EC
 
 
 class RecoveryPasswordPage(BasePage):
-    @allure.step('Кликнуть по кнопке Личный кабинет')
+    @allure.step('Переход по клику на «Личный кабинет»')
     def click_to_personal_account(self):
-        self.find_element_with_wait(RecoveryPasswordLocators.PERSONAL_ACCOUNT)
-        self.click_to_element(RecoveryPasswordLocators.PERSONAL_ACCOUNT)
+        self.click(RecoveryPasswordLocators.PERSONAL_ACCOUNT)
 
     @allure.step('Проверяем, что в окне Личный кабинет')
     def verification_personal_account(self):
@@ -26,7 +28,7 @@ class RecoveryPasswordPage(BasePage):
         self.add_text_to_element(RecoveryPasswordLocators.LOGIN_EMAIL, email)
 
     @allure.step('Кликнуть по кнопке Восстановить')
-    def clict_to_recovery(self):
+    def click_to_recovery(self):
         self.click_to_element(RecoveryPasswordLocators.BUTTON_RESTORE)
 
     @allure.step('Проверяем, что в окне Восстановление пароля')
@@ -41,8 +43,9 @@ class RecoveryPasswordPage(BasePage):
     def password_field_highlighted(self):
         field = self.find_element_with_wait(RecoveryPasswordLocators.FIELD_PASSWORD_LOCATOR)
         label = self.find_element_with_wait(RecoveryPasswordLocators.LABEL_PASSWORD_LOCATOR)
-
-        return "input_status_active" in field.get_attribute("class") and "input__placeholder-focused" in label.get_attribute("class")
+        field_class = field.get_attribute("class")
+        label_class = label.get_attribute("class")
+        return "input_status_active" in field_class and "input__placeholder-focused" in label_class
 
 
 
