@@ -1,8 +1,7 @@
 import pytest
 from selenium import webdriver
 from methods.users_methods import UsersMethods
-from locators.recovery_password_locators import RecoveryPasswordLocators
-from locators.personal_account_locators import PersonalAccountLocators
+from config import BASE_URL
 from helpers import create_user_payload
 
 
@@ -12,7 +11,7 @@ def driver(request):
         driver = webdriver.Chrome()
     else:
         driver = webdriver.Firefox()
-    driver.get("https://stellarburgers.nomoreparties.site/")
+    driver.get(BASE_URL)
     yield driver
     driver.quit()
 
