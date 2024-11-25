@@ -6,7 +6,7 @@ from page.base_page import BasePage
 class OrderWithDetailsPage(BasePage):
     @allure.step('Переход по клику на «Лента заказов»')
     def click_to_order_list(self):
-        self.click_to_element(OrderWithDetailsLocators.ORDER_LIST)
+        self.move_to_element_and_click(OrderWithDetailsLocators.ORDER_LIST)
         self.find_element_with_wait(OrderWithDetailsLocators.ORDER_LIST_TEXT)
 
     @allure.step('Кликнуть на заказ')

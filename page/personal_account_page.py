@@ -13,7 +13,7 @@ class PersonalAccountPage(BasePage):
         self.get_text_from_element(PersonalAccountLocators.ENTRANCE_TEXT)
         self.add_text_to_element(PersonalAccountLocators.LOGIN_EMAIL, email)
         self.add_text_to_element(PersonalAccountLocators.LOGIN_PASSWORD, password)
-        self.click_to_element(PersonalAccountLocators.LOGIN_ACCOUNT)
+        self.move_to_element_and_click(PersonalAccountLocators.LOGIN_ACCOUNT)
 
     @allure.step('Проверяем, что на главной странице')
     def verification_main_page(self):
@@ -21,7 +21,7 @@ class PersonalAccountPage(BasePage):
 
     @allure.step('Переход по клику на «Личный кабинет»')
     def click_to_personal_account_1(self):
-        self.click_to_element(PersonalAccountLocators.PERSONAL_ACCOUNT)
+        self.move_to_element_and_click(PersonalAccountLocators.PERSONAL_ACCOUNT)
         self.get_text_from_element(PersonalAccountLocators.PROFILE_TEXT)
 
     @allure.step('Переход в раздел «История заказов»')

@@ -6,9 +6,12 @@ from locators.personal_account_locators import PersonalAccountLocators
 from helpers import create_user_payload
 
 
-@pytest.fixture()
-def driver():
-    driver = webdriver.Chrome()
+@pytest.fixture(params=["chrome", "firefox"])
+def driver(request):
+    if request.param == 'chrome':
+        driver = webdriver.Chrome()
+    else:
+        driver = webdriver.Firefox()
     driver.get("https://stellarburgers.nomoreparties.site/")
     yield driver
     driver.quit()

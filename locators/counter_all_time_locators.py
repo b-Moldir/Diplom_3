@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
-class OrderHistoryLocators:
+class CounterAllTimeLocators:
     PERSONAL_ACCOUNT = (By.XPATH, '//header[@class="AppHeader_header__X9aJA pb-4 pt-4"]//p[text()="Личный Кабинет"]')
     LOGIN_EMAIL = (By.XPATH, '//label[text()="Email"]/parent::div/input')
     LOGIN_PASSWORD = (By.XPATH, '//label[text()="Пароль"]/parent::div/input')
@@ -13,10 +13,8 @@ class OrderHistoryLocators:
     CROSS_BUTTON = (By.XPATH, '//button[@class="Modal_modal__close_modified__3V5XS Modal_modal__close__TnseK"]')
     COUNTER_NUM = (By.XPATH, '//p[@class="counter_counter__num__3nue1"][text()=2]')
     COOKING_ORDER = (By.XPATH, '//p[text()="Ваш заказ начали готовить"]')
-    PROFILE_TEXT = (By.XPATH, '//main[@class="App_componentContainer__2JC2W"]//a[text()="Профиль"]')
-    ORDER_HISTORY_BUTTON = (By.XPATH, '//main[@class="App_componentContainer__2JC2W"]//a[text()="История заказов"]')
-    ORDER_HISTORY = (By.XPATH, '//h2[@class="Modal_modal__title_shadow__3ikwq Modal_modal__title__2L34m text text_type_digits-large mb-8"]')
-    ORDER_HISTORY_IN_HISTORY = (By.XPATH, '//p[@class="text text_type_digits-default"]')
+    ALL_TIME_XPATH = (By.XPATH, '//div[2]/p[2][@class="OrderFeed_number__2MbrQ text text_type_digits-large"]')
     ORDER_LIST = (By.XPATH, '//p[@class="AppHeader_header__linkText__3q_va ml-2"][text()="Лента Заказов"]')
     ORDER_LIST_TEXT = (By.XPATH, '//h1[@class="text text_type_main-large mt-10 mb-5"][text()="Лента заказов"]')
-
+    CONSTRUCTOR_TEXT = (By.XPATH, '//header[@class="AppHeader_header__X9aJA pb-4 pt-4"]//p[text()="Конструктор"]')
+    BUN_XPATH = (By.XPATH, '//main[@class="App_componentContainer__2JC2W"]//span[text()="Булки"]')
